@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+
+}
+body{
+    margin: 10px;
+}
+
+#text-CSV{
+    min-width: 350px;;
+    min-height: 200px;
+    background-color: aquamarine;
+}
+
+#container{
+    display: flex;
+    justify-content: space-around;
+
+}
