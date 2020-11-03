@@ -11,10 +11,17 @@ app.use(express.static(__dirname +"/./client"))
 // app.get('/json' , (req,res)=>{
 
 // })
+function arrayToCSV (data) {
+    csv = data.map(row => Object.values(row));
+    csv.unshift(Object.keys(data[0]));
+    return csv.join('\n');
+  }
 
 app.post('/upload-json' ,(req,res)=>{
     console.log(req.body)
-    res.send("Asd")
+
+   var  csvData = arrayToCSV(req.body)
+    res.json(csvData)
 
 })
 

@@ -1,5 +1,8 @@
 var text = document.getElementById("text-josn");
-var subBtn =document.getElementById("submit");
+var subBtn =document.getElementById("submitBtn");
+var csvData =document.getElementById("text-CSV");
+
+
 
 
 var sendHttpRequest = (method, url, data) => {
@@ -31,7 +34,7 @@ var sendHttpRequest = (method, url, data) => {
 var sendJosn = (txtJosn) => {
     sendHttpRequest('POST', 'http://127.0.0.1:3000/upload-json', txtJosn)
       .then(responseData => {
-        console.log(responseData)
+        csvData.innerHTML = responseData
       })
       .catch(err => {
         console.log(err)
